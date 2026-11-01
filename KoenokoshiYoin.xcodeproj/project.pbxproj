@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A11111111111111111111111 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = A33333333333333333333333 /* DesignSystem */; };
+		A22222222222222222222222 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = A44444444444444444444444 /* DesignSystem */; };
 		00B0FA400C31636274E92D98 /* RecordingFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 47D8B45FCA67B71635425369 /* RecordingFeature */; };
 		0DFF8CB7802A802C41E129F5 /* MemoDetailFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 6B90F6B68A497CDFAB6E28E2 /* MemoDetailFeature */; };
 		0F3DF390FB9E8C10381C47A4 /* MemoPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = AF2CC19225C1A023841FAEE4 /* MemoPersistence */; };
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A22222222222222222222222 /* DesignSystem in Frameworks */,
 				00B0FA400C31636274E92D98 /* RecordingFeature in Frameworks */,
 				492A3F67D5288F0E6431FC2E /* OutboxFeature in Frameworks */,
 				FD63F28EC4EB5A7A6C0C4604 /* AudioCapture in Frameworks */,
@@ -60,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A11111111111111111111111 /* DesignSystem in Frameworks */,
 				DEBE7F2C7CEDFA5DEED26A49 /* MemoListFeature in Frameworks */,
 				0DFF8CB7802A802C41E129F5 /* MemoDetailFeature in Frameworks */,
 				901E90E6D440450EC322D42B /* StatusFeature in Frameworks */,
@@ -148,6 +152,7 @@
 			);
 			name = KoenokoshiYoinPhone;
 			packageProductDependencies = (
+				A33333333333333333333333 /* DesignSystem */,
 				9FB843F044766C1FC88E96F2 /* MemoListFeature */,
 				6B90F6B68A497CDFAB6E28E2 /* MemoDetailFeature */,
 				660727A10AF9BAD41033E87A /* StatusFeature */,
@@ -177,6 +182,7 @@
 			);
 			name = KoenokoshiYoinWatch;
 			packageProductDependencies = (
+				A44444444444444444444444 /* DesignSystem */,
 				47D8B45FCA67B71635425369 /* RecordingFeature */,
 				59784F8FA3AB7441B4685161 /* OutboxFeature */,
 				32305DC3F184E22CC5D0EE18 /* AudioCapture */,
@@ -484,6 +490,14 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A33333333333333333333333 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
+		};
+		A44444444444444444444444 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
+		};
 		32305DC3F184E22CC5D0EE18 /* AudioCapture */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AudioCapture;

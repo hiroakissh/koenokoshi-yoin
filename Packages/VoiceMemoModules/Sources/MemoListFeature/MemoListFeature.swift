@@ -1,33 +1,63 @@
 import SwiftUI
 import VoiceMemoDomain
 import VoiceMemoInterfaces
+import DesignSystem
 
 public struct MemoListView: View {
     let snapshots: [MemoSnapshot]
+    @Environment(\.colorScheme) private var scheme
+
     public init(snapshots: [MemoSnapshot] = []) { self.snapshots = snapshots }
+
     public var body: some View {
         List {
             if snapshots.isEmpty {
-                ContentUnavailableView("録音はありません", systemImage: "waveform", description: Text("Apple Watchで録音すると、ここに表示されます。"))
+                VStack(alignment: .leading, spacing: 12) {
+                    Image(systemName: "waveform")
+                        .font(.title)
+                        .foregroundStyle(YoinTheme.action(scheme))
+                        .accessibilityHidden(true)
+                    Text("まだ録音がありません")
+                        .font(.headline)
+                        .foregroundStyle(YoinTheme.text(scheme))
+                    Text("Apple Watchで録音すると、ここに表示されます。")
+                        .font(.subheadline)
+                        .foregroundStyle(YoinTheme.secondary(scheme))
+                }
+                .padding(.vertical, 20)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .listRowBackground(YoinTheme.surface(scheme))
             } else {
                 ForEach(groupedSnapshots, id: \.key) { day, memos in
                     Section(day.formatted(date: .abbreviated, time: .omitted)) {
                         ForEach(memos) { memo in
                             NavigationLink(value: memo.id) {
-                                VStack(alignment: .leading) {
-                                    Text(memo.title ?? "整理待ち").font(.headline)
-                                    Text(memo.recordedAt, style: .time)
-                                    Text(state(memo.processingState)).font(.caption).foregroundStyle(.secondary)
+                                VStack(alignment: .leading, spacing: 7) {
+                                    Text(memo.title ?? "整理待ち")
+                                        .font(.headline)
+                                        .foregroundStyle(YoinTheme.text(scheme))
+                                    HStack(spacing: 8) {
+                                        Text(memo.recordedAt, style: .time)
+                                        Text("·").accessibilityHidden(true)
+                                        Text(state(memo.processingState))
+                                    }
+                                    .font(.caption)
+                                    .foregroundStyle(YoinTheme.secondary(scheme))
                                 }
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.vertical, 7)
                             }
+                            .listRowBackground(YoinTheme.surface(scheme))
                         }
                     }
                 }
             }
         }
+        .scrollContentBackground(.hidden)
+        .background(YoinTheme.background(scheme))
+        .tint(YoinTheme.action(scheme))
         .navigationTitle("音声メモ")
     }
+
     private var groupedSnapshots: [(key: Date, value: [MemoSnapshot])] {
         let calendar = Calendar.current
         return Dictionary(grouping: snapshots) { calendar.startOfDay(for: $0.recordedAt) }

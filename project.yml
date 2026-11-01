@@ -33,6 +33,8 @@ targets:
         TARGETED_DEVICE_FAMILY: "1"
     dependencies:
       - package: VoiceMemoModules
+        product: DesignSystem
+      - package: VoiceMemoModules
         product: MemoListFeature
       - package: VoiceMemoModules
         product: MemoDetailFeature
@@ -72,6 +74,8 @@ targets:
         PRODUCT_NAME: "声のこし・余韻"
         TARGETED_DEVICE_FAMILY: "4"
     dependencies:
+      - package: VoiceMemoModules
+        product: DesignSystem
       - package: VoiceMemoModules
         product: RecordingFeature
       - package: VoiceMemoModules

@@ -12,6 +12,7 @@ let package = Package(
         .watchOS(.v11)
     ],
     products: [
+        .library(name: "DesignSystem", targets: ["DesignSystem"]),
         .library(name: "VoiceMemoDomain", targets: ["VoiceMemoDomain"]),
         .library(name: "VoiceMemoInterfaces", targets: ["VoiceMemoInterfaces"]),
         .library(name: "SyncContract", targets: ["SyncContract"]),
@@ -32,14 +33,15 @@ let package = Package(
         .library(name: "Summarization", targets: ["Summarization"])
     ],
     targets: [
+        .target(name: "DesignSystem"),
         .target(name: "VoiceMemoDomain"),
         .target(name: "VoiceMemoInterfaces", dependencies: ["VoiceMemoDomain"]),
         .target(name: "SyncContract", dependencies: ["VoiceMemoDomain"]),
-        .target(name: "RecordingFeature", dependencies: ["VoiceMemoDomain", "VoiceMemoInterfaces"], swiftSettings: [.swiftLanguageMode(.v6)]),
-        .target(name: "OutboxFeature", dependencies: ["VoiceMemoDomain", "VoiceMemoInterfaces"], swiftSettings: [.swiftLanguageMode(.v6)]),
-        .target(name: "MemoListFeature", dependencies: ["VoiceMemoDomain", "VoiceMemoInterfaces"], swiftSettings: [.swiftLanguageMode(.v6)]),
-        .target(name: "MemoDetailFeature", dependencies: ["VoiceMemoDomain", "VoiceMemoInterfaces"], swiftSettings: [.swiftLanguageMode(.v6)]),
-        .target(name: "StatusFeature", dependencies: ["VoiceMemoDomain", "VoiceMemoInterfaces"], swiftSettings: [.swiftLanguageMode(.v6)]),
+        .target(name: "RecordingFeature", dependencies: ["DesignSystem", "VoiceMemoDomain", "VoiceMemoInterfaces"], swiftSettings: [.swiftLanguageMode(.v6)]),
+        .target(name: "OutboxFeature", dependencies: ["DesignSystem", "VoiceMemoDomain", "VoiceMemoInterfaces"], swiftSettings: [.swiftLanguageMode(.v6)]),
+        .target(name: "MemoListFeature", dependencies: ["DesignSystem", "VoiceMemoDomain", "VoiceMemoInterfaces"], swiftSettings: [.swiftLanguageMode(.v6)]),
+        .target(name: "MemoDetailFeature", dependencies: ["DesignSystem", "VoiceMemoDomain", "VoiceMemoInterfaces"], swiftSettings: [.swiftLanguageMode(.v6)]),
+        .target(name: "StatusFeature", dependencies: ["DesignSystem", "VoiceMemoDomain", "VoiceMemoInterfaces"], swiftSettings: [.swiftLanguageMode(.v6)]),
         .target(name: "WatchWorkflow", dependencies: ["VoiceMemoDomain", "VoiceMemoInterfaces", "SyncContract"], swiftSettings: [.swiftLanguageMode(.v6)]),
         .target(name: "MemoProcessing", dependencies: ["VoiceMemoDomain", "VoiceMemoInterfaces", "SyncContract"], swiftSettings: [.swiftLanguageMode(.v6)]),
         .target(name: "AudioCapture", dependencies: ["VoiceMemoDomain", "VoiceMemoInterfaces"], swiftSettings: [.swiftLanguageMode(.v6)]),
