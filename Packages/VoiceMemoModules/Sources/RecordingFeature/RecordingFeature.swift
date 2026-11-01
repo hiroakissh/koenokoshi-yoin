@@ -2,6 +2,7 @@ import SwiftUI
 import Observation
 import VoiceMemoDomain
 import VoiceMemoInterfaces
+import DesignSystem
 
 @MainActor @Observable public final class RecordingViewModel {
     private let recorder: any RecorderService
@@ -121,20 +122,31 @@ import VoiceMemoInterfaces
 public struct NoopReminderService: RecordingReminderService { public init() {}; public func schedule(_ request: RecordingReminderRequest) async throws {}; public func cancel(memoID: UUID) async {} }
 
 public struct RecordingView: View {
+    @Environment(\.colorScheme) private var scheme
     @Bindable private var model: RecordingViewModel
     public init(model: RecordingViewModel) { self.model = model }
     public var body: some View {
-        GeometryReader { proxy in
+        ScrollView {
             VStack(spacing: 8) {
                 Text(model.isRecording ? "録音中" : "録音待機")
                     .font(.headline)
+                    .foregroundStyle(YoinTheme.secondary(scheme))
                     .accessibilityAddTraits(.isHeader)
                 Text(Self.format(model.elapsed))
-                    .font(.system(size: 42, weight: .regular, design: .monospaced))
+                    .font(.system(size: 34, weight: .regular, design: .monospaced))
                     .monospacedDigit()
                     .lineLimit(1)
                     .minimumScaleFactor(0.55)
                     .frame(maxWidth: .infinity)
+                Button { Task { await model.toggleRecording() } } label: {
+                    Text(model.isRecording ? "停止して保存" : "録音開始")
+                        .foregroundStyle(YoinTheme.onAction(scheme))
+                        .frame(maxWidth: .infinity)
+                }
+                    .buttonStyle(.borderedProminent)
+                    .tint(YoinTheme.action(scheme))
+                    .frame(maxWidth: .infinity, minHeight: 44)
+                    .accessibilityHint("録音の開始または保存")
                 if !model.isRecording {
                     HStack {
                         Text("録音上限")
@@ -142,7 +154,7 @@ public struct RecordingView: View {
                         Button(model.limit.label) { model.limit = next(model.limit, in: RecordingLimit.allCases) }
                             .buttonStyle(.plain)
                             .frame(minWidth: 96, minHeight: 36)
-                            .background(Capsule().fill(Color.secondary.opacity(0.25)))
+                            .background(Capsule().fill(YoinTheme.raised(scheme)))
                             .accessibilityLabel("録音上限: \(model.limit.label)")
                             .accessibilityHint("タップすると次の上限に切り替えます")
                     }
@@ -152,7 +164,7 @@ public struct RecordingView: View {
                         Button(model.reminder.label) { model.reminder = next(model.reminder, in: ReminderInterval.allCases) }
                             .buttonStyle(.plain)
                             .frame(minWidth: 96, minHeight: 36)
-                            .background(Capsule().fill(Color.secondary.opacity(0.25)))
+                            .background(Capsule().fill(YoinTheme.raised(scheme)))
                             .accessibilityLabel("継続確認: \(model.reminder.label)")
                             .accessibilityHint("タップすると次の間隔に切り替えます")
                     }
@@ -168,16 +180,15 @@ public struct RecordingView: View {
                         .frame(maxWidth: .infinity)
                         .accessibilityLabel(message)
                 }
-                Button(model.isRecording ? "停止して保存" : "録音開始") { Task { await model.toggleRecording() } }
-                    .buttonStyle(.borderedProminent)
-                    .frame(maxWidth: .infinity, minHeight: 44)
-                    .accessibilityHint("録音の開始または保存")
+
             }
-            .frame(width: proxy.size.width - 24, height: proxy.size.height - 16, alignment: .center)
-            .padding(.horizontal, 12)
+            .foregroundStyle(YoinTheme.text(scheme))
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 8)
             .padding(.vertical, 8)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(YoinTheme.background(scheme).ignoresSafeArea())
         .task { await model.loadPersistedSettings() }
         .onChange(of: model.limit) { _, _ in Task { await model.persistSettings() } }
         .onChange(of: model.reminder) { _, _ in Task { await model.persistSettings() } }

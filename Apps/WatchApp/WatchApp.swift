@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignSystem
 import RecordingFeature
 import OutboxFeature
 import AudioCapture
@@ -83,6 +84,7 @@ struct KoenokoshiYoinWatchApp: App {
                 }
                     .tabItem { Label("未送信", systemImage: "arrow.up.circle") }
             }
+            .modifier(YoinTint())
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.black.ignoresSafeArea())
             .task {

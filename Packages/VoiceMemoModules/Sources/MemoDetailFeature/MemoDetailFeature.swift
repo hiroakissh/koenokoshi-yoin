@@ -1,11 +1,13 @@
 import SwiftUI
 import VoiceMemoInterfaces
+import DesignSystem
 
 public struct MemoDetailView: View {
     let memo: MemoSnapshot
     let playback: any AudioPlaybackService
     let onDelete: () async -> Void
     let onRetry: () async -> Void
+    @Environment(\.colorScheme) private var scheme
     @State private var isPlaying = false
     @State private var seekPosition = 0.0
     @State private var showingDeleteConfirmation = false
@@ -22,46 +24,56 @@ public struct MemoDetailView: View {
     public var body: some View {
         ScrollView(.vertical) {
             VStack(alignment: .leading, spacing: 16) {
-                Text(memo.title ?? "整理待ち").font(.title2)
-                Text("長さ: \(Int(memo.durationSeconds))秒")
-                HStack {
-                    Button {
-                        Task {
-                            do {
-                                if isPlaying {
-                                    await playback.pause()
-                                } else {
-                                    try await playback.play(memoID: memo.id, from: seekPosition)
-                                }
-                                isPlaying.toggle()
-                            } catch {
-                                errorMessage = error.localizedDescription
-                            }
-                        }
-                    } label: {
-                        Label(isPlaying ? "停止" : "再生", systemImage: isPlaying ? "pause.fill" : "play.fill")
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .accessibilityHint("録音音声を再生または停止")
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(memo.title ?? "整理待ち").font(.title2.weight(.semibold))
+                    Text(memo.recordedAt, format: .dateTime.year().month().day().hour().minute())
+                        .font(.subheadline).foregroundStyle(YoinTheme.secondary(scheme))
                 }
-                VStack(spacing: 4) {
-                    Slider(value: $seekPosition, in: 0...max(1, memo.durationSeconds), onEditingChanged: { editing in
-                        if !editing {
-                            Task { try? await playback.seek(memoID: memo.id, to: seekPosition) }
-                        }
-                    })
-                    .accessibilityLabel("再生位置")
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("録音").font(.headline)
                     HStack {
-                        Text(formatTime(seekPosition))
-                        Spacer()
-                        Text(formatTime(memo.durationSeconds))
+                        Button {
+                            Task {
+                                do {
+                                    if isPlaying {
+                                        await playback.pause()
+                                    } else {
+                                        try await playback.play(memoID: memo.id, from: seekPosition)
+                                    }
+                                    isPlaying.toggle()
+                                } catch {
+                                    errorMessage = error.localizedDescription
+                                }
+                            }
+                        } label: {
+                            Label(isPlaying ? "一時停止" : "再生", systemImage: isPlaying ? "pause.fill" : "play.fill")
+                                .foregroundStyle(YoinTheme.onAction(scheme))
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .accessibilityHint("録音音声を再生または一時停止")
                     }
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                    VStack(spacing: 4) {
+                        Slider(value: $seekPosition, in: 0...max(1, memo.durationSeconds), onEditingChanged: { editing in
+                            if !editing {
+                                Task { try? await playback.seek(memoID: memo.id, to: seekPosition) }
+                            }
+                        })
+                        .accessibilityLabel("再生位置")
+                        HStack {
+                            Text(formatTime(seekPosition))
+                            Spacer()
+                            Text(formatTime(memo.durationSeconds))
+                        }
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    }
+                    if let errorMessage {
+                        Text(errorMessage).font(.footnote).foregroundStyle(YoinTheme.secondary(scheme))
+                    }
                 }
-                if let errorMessage {
-                    Text(errorMessage).font(.footnote).foregroundStyle(.secondary)
-                }
+                .padding(16)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(YoinTheme.surface(scheme), in: RoundedRectangle(cornerRadius: 16))
                 if canRetry {
                     Button {
                         Task {
@@ -76,21 +88,24 @@ public struct MemoDetailView: View {
                     .disabled(isRetrying)
                 }
                 if !memo.summaryPoints.isEmpty {
-                    Text("要約").font(.headline)
+                    Text("要約").font(.headline).padding(.top, 4)
                     ForEach(memo.summaryPoints, id: \.self) { Text("・\($0)") }
                 }
                 if let transcript = memo.transcript {
-                    Text("全文").font(.headline)
+                    Text("全文").font(.headline).padding(.top, 4)
                     Text(transcript)
                 } else {
-                    Text("文字起こし待ち").foregroundStyle(.secondary)
+                    Text("文字起こし待ち").foregroundStyle(YoinTheme.secondary(scheme))
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 16)
             .padding(.vertical, 20)
+            .foregroundStyle(YoinTheme.text(scheme))
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .background(YoinTheme.background(scheme).ignoresSafeArea())
+        .tint(YoinTheme.action(scheme))
         .navigationTitle("詳細")
         .toolbar {
             ToolbarItem(placement: .automatic) {

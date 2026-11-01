@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignSystem
 import Observation
 import SwiftData
 import CryptoKit
@@ -79,8 +80,8 @@ struct KoenokoshiYoinPhoneApp: App {
                 NavigationStack { StatusView(watchConnected: watchConnected, transcription: transcriptionCapability, summarization: summarizationCapability, freeStorageBytes: freeStorageBytes, audioStorageBytes: audioStorageBytes) }
                     .tabItem { Label("利用状況", systemImage: "info.circle") }
             }
+            .modifier(YoinTint())
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .ignoresSafeArea()
             .modelContainer(container)
             .task {
                 watchConnected = WCSession.isSupported() && WCSession.default.activationState == .activated
