@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00B0FA400C31636274E92D98 /* RecordingFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 47D8B45FCA67B71635425369 /* RecordingFeature */; };
+		0DFF8CB7802A802C41E129F5 /* MemoDetailFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 6B90F6B68A497CDFAB6E28E2 /* MemoDetailFeature */; };
+		0F3DF390FB9E8C10381C47A4 /* MemoPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = AF2CC19225C1A023841FAEE4 /* MemoPersistence */; };
+		0F73DC3D8D3FDE4CADA7B04A /* RecordingReminders in Frameworks */ = {isa = PBXBuildFile; productRef = AFD95B5C8D5BDAC5702802FD /* RecordingReminders */; };
+		388EF034F03822CA23FD9000 /* Summarization in Frameworks */ = {isa = PBXBuildFile; productRef = D2EBAC8BCA5CB78E54E9DCD9 /* Summarization */; };
+		492A3F67D5288F0E6431FC2E /* OutboxFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 59784F8FA3AB7441B4685161 /* OutboxFeature */; };
+		52D47A51A3D8C2F9ACE41E63 /* DeviceSync in Frameworks */ = {isa = PBXBuildFile; productRef = AB7E4D5520EA884C005F3234 /* DeviceSync */; };
+		546F3050382AFDDBB8A10970 /* MemoProcessing in Frameworks */ = {isa = PBXBuildFile; productRef = DE728E5D8989F0EB1EB5C7F7 /* MemoProcessing */; };
+		697D31FF4E981EBC1E4633D7 /* AudioPlayback in Frameworks */ = {isa = PBXBuildFile; productRef = 4A7A48E0DD71E901DF17609A /* AudioPlayback */; };
+		71E54093A46CA386F5443FE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C874BE070099434A51354E4 /* LaunchScreen.storyboard */; };
+		901E90E6D440450EC322D42B /* StatusFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 660727A10AF9BAD41033E87A /* StatusFeature */; };
+		933E5E20C790AA49869B3E74 /* PhoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F051A601E672858567B0E93 /* PhoneApp.swift */; };
+		AF67459F7070D373A288A066 /* Transcription in Frameworks */ = {isa = PBXBuildFile; productRef = 632A62DB69F6A30F2AFF58AE /* Transcription */; };
+		B8364A3EFAC6B8BB01C5A0D9 /* WatchWorkflow in Frameworks */ = {isa = PBXBuildFile; productRef = B4B0341060AE5DCCCC33301D /* WatchWorkflow */; };
+		BA19FE5F5DBAA649E654F07E /* DeviceSync in Frameworks */ = {isa = PBXBuildFile; productRef = 9FB9BBB552C0A55FEBE5A022 /* DeviceSync */; };
+		C7A74B89DABA2A85A2DB7FF2 /* WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06870E102572A113A16B65CD /* WatchApp.swift */; };
+		DC4807183E42AC16816FFEED /* VoiceMemoDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 4962860EE2B543BEAB482563 /* VoiceMemoDomain */; };
+		DEBE7F2C7CEDFA5DEED26A49 /* MemoListFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 9FB843F044766C1FC88E96F2 /* MemoListFeature */; };
+		EC2AAA21BB7C0BE4ED061D3A /* VoiceMemoInterfaces in Frameworks */ = {isa = PBXBuildFile; productRef = C8BDE93C2D8C4F3F17B0E799 /* VoiceMemoInterfaces */; };
+		F81B1C46BEE7751F87D389C7 /* WatchPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = ABEC2ACFC573CAEAD7A36C0D /* WatchPersistence */; };
+		FD63F28EC4EB5A7A6C0C4604 /* AudioCapture in Frameworks */ = {isa = PBXBuildFile; productRef = 32305DC3F184E22CC5D0EE18 /* AudioCapture */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06870E102572A113A16B65CD /* WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchApp.swift; sourceTree = "<group>"; };
+		3CCECAB22A221E977AF77547 /* VoiceMemoModules */ = {isa = PBXFileReference; lastKnownFileType = folder; name = VoiceMemoModules; path = Packages/VoiceMemoModules; sourceTree = SOURCE_ROOT; };
+		5DDE4E9303945A98FD074CDA /* 声のこし・余韻.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "声のこし・余韻.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7045AF8DCE40707E83443634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7F051A601E672858567B0E93 /* PhoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneApp.swift; sourceTree = "<group>"; };
+		85677F10B6DA44B121BD5C38 /* KoenokoshiYoinWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = KoenokoshiYoinWatch.app; path = "声のこし・余韻.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C874BE070099434A51354E4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CA6EC7511BFF86472163A11F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F386E66FB252DAC116E5C98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00B0FA400C31636274E92D98 /* RecordingFeature in Frameworks */,
+				492A3F67D5288F0E6431FC2E /* OutboxFeature in Frameworks */,
+				FD63F28EC4EB5A7A6C0C4604 /* AudioCapture in Frameworks */,
+				F81B1C46BEE7751F87D389C7 /* WatchPersistence in Frameworks */,
+				52D47A51A3D8C2F9ACE41E63 /* DeviceSync in Frameworks */,
+				0F73DC3D8D3FDE4CADA7B04A /* RecordingReminders in Frameworks */,
+				B8364A3EFAC6B8BB01C5A0D9 /* WatchWorkflow in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D83C3368325130672A09B393 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEBE7F2C7CEDFA5DEED26A49 /* MemoListFeature in Frameworks */,
+				0DFF8CB7802A802C41E129F5 /* MemoDetailFeature in Frameworks */,
+				901E90E6D440450EC322D42B /* StatusFeature in Frameworks */,
+				0F3DF390FB9E8C10381C47A4 /* MemoPersistence in Frameworks */,
+				EC2AAA21BB7C0BE4ED061D3A /* VoiceMemoInterfaces in Frameworks */,
+				DC4807183E42AC16816FFEED /* VoiceMemoDomain in Frameworks */,
+				BA19FE5F5DBAA649E654F07E /* DeviceSync in Frameworks */,
+				546F3050382AFDDBB8A10970 /* MemoProcessing in Frameworks */,
+				AF67459F7070D373A288A066 /* Transcription in Frameworks */,
+				388EF034F03822CA23FD9000 /* Summarization in Frameworks */,
+				697D31FF4E981EBC1E4633D7 /* AudioPlayback in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17B7B82ECE4026DA354BC69D /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				3CCECAB22A221E977AF77547 /* VoiceMemoModules */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		6679DCD1F2311C698D4A21B8 /* PhoneApp */ = {
+			isa = PBXGroup;
+			children = (
+				7045AF8DCE40707E83443634 /* Info.plist */,
+				9C874BE070099434A51354E4 /* LaunchScreen.storyboard */,
+				7F051A601E672858567B0E93 /* PhoneApp.swift */,
+			);
+			path = PhoneApp;
+			sourceTree = "<group>";
+		};
+		88515CD3AF954F1F5A4E0507 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				6679DCD1F2311C698D4A21B8 /* PhoneApp */,
+				A6645537CB4ADC6963DF5B7F /* WatchApp */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		A6645537CB4ADC6963DF5B7F /* WatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				CA6EC7511BFF86472163A11F /* Info.plist */,
+				06870E102572A113A16B65CD /* WatchApp.swift */,
+			);
+			path = WatchApp;
+			sourceTree = "<group>";
+		};
+		E6C9629CBE6D356683E01160 = {
+			isa = PBXGroup;
+			children = (
+				88515CD3AF954F1F5A4E0507 /* Apps */,
+				17B7B82ECE4026DA354BC69D /* Packages */,
+				FCD7A50064002DBD06CACC47 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FCD7A50064002DBD06CACC47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5DDE4E9303945A98FD074CDA /* 声のこし・余韻.app */,
+				85677F10B6DA44B121BD5C38 /* KoenokoshiYoinWatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13837A51F431EFA99C437589 /* KoenokoshiYoinPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85E7A2F2BF926370F54C2A2A /* Build configuration list for PBXNativeTarget "KoenokoshiYoinPhone" */;
+			buildPhases = (
+				7EB187E36C4F0C9B8CBDCBE1 /* Sources */,
+				848ADFFB4B360A144AD00B8A /* Resources */,
+				D83C3368325130672A09B393 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KoenokoshiYoinPhone;
+			packageProductDependencies = (
+				9FB843F044766C1FC88E96F2 /* MemoListFeature */,
+				6B90F6B68A497CDFAB6E28E2 /* MemoDetailFeature */,
+				660727A10AF9BAD41033E87A /* StatusFeature */,
+				AF2CC19225C1A023841FAEE4 /* MemoPersistence */,
+				C8BDE93C2D8C4F3F17B0E799 /* VoiceMemoInterfaces */,
+				4962860EE2B543BEAB482563 /* VoiceMemoDomain */,
+				9FB9BBB552C0A55FEBE5A022 /* DeviceSync */,
+				DE728E5D8989F0EB1EB5C7F7 /* MemoProcessing */,
+				632A62DB69F6A30F2AFF58AE /* Transcription */,
+				D2EBAC8BCA5CB78E54E9DCD9 /* Summarization */,
+				4A7A48E0DD71E901DF17609A /* AudioPlayback */,
+			);
+			productName = KoenokoshiYoinPhone;
+			productReference = 5DDE4E9303945A98FD074CDA /* 声のこし・余韻.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CFFA719D8A782DCD52783F45 /* KoenokoshiYoinWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19EB0DFA026A42EE260DBE22 /* Build configuration list for PBXNativeTarget "KoenokoshiYoinWatch" */;
+			buildPhases = (
+				092F2FCA088050D37C58FE43 /* Sources */,
+				9F386E66FB252DAC116E5C98 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KoenokoshiYoinWatch;
+			packageProductDependencies = (
+				47D8B45FCA67B71635425369 /* RecordingFeature */,
+				59784F8FA3AB7441B4685161 /* OutboxFeature */,
+				32305DC3F184E22CC5D0EE18 /* AudioCapture */,
+				ABEC2ACFC573CAEAD7A36C0D /* WatchPersistence */,
+				AB7E4D5520EA884C005F3234 /* DeviceSync */,
+				AFD95B5C8D5BDAC5702802FD /* RecordingReminders */,
+				B4B0341060AE5DCCCC33301D /* WatchWorkflow */,
+			);
+			productName = KoenokoshiYoinWatch;
+			productReference = 85677F10B6DA44B121BD5C38 /* KoenokoshiYoinWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8404DE3D62F85A5F63D34928 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					CFFA719D8A782DCD52783F45 = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = 0BEB8A982008C04D113D9DAE /* Build configuration list for PBXProject "KoenokoshiYoin" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = E6C9629CBE6D356683E01160;
+			packageReferences = (
+				EC0DA2A424AB3245E7B59BE0 /* XCLocalSwiftPackageReference "Packages/VoiceMemoModules" */,
+			);
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13837A51F431EFA99C437589 /* KoenokoshiYoinPhone */,
+				CFFA719D8A782DCD52783F45 /* KoenokoshiYoinWatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		848ADFFB4B360A144AD00B8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71E54093A46CA386F5443FE9 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		092F2FCA088050D37C58FE43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7A74B89DABA2A85A2DB7FF2 /* WatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EB187E36C4F0C9B8CBDCBE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				933E5E20C790AA49869B3E74 /* PhoneApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		098820941B77CFEACF567467 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = X5LBWH4CYQ;
+				INFOPLIST_FILE = Apps/PhoneApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakissh.koenokoshiyoin;
+				PRODUCT_NAME = "声のこし・余韻";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		4279D4660C8994C9E7921B67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Apps/WatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakissh.koenokoshiyoin.watchapp;
+				PRODUCT_NAME = "声のこし・余韻";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		4D18EE3640E71FC81B5A4E8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		8B284A1F1847DE54B6931E93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		92D1823DB6254E7F51AFB33E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Apps/WatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakissh.koenokoshiyoin.watchapp;
+				PRODUCT_NAME = "声のこし・余韻";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		F98A370F3C840306AFE61939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = X5LBWH4CYQ;
+				INFOPLIST_FILE = Apps/PhoneApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakissh.koenokoshiyoin;
+				PRODUCT_NAME = "声のこし・余韻";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0BEB8A982008C04D113D9DAE /* Build configuration list for PBXProject "KoenokoshiYoin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D18EE3640E71FC81B5A4E8B /* Debug */,
+				8B284A1F1847DE54B6931E93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		19EB0DFA026A42EE260DBE22 /* Build configuration list for PBXNativeTarget "KoenokoshiYoinWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4279D4660C8994C9E7921B67 /* Debug */,
+				92D1823DB6254E7F51AFB33E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		85E7A2F2BF926370F54C2A2A /* Build configuration list for PBXNativeTarget "KoenokoshiYoinPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F98A370F3C840306AFE61939 /* Debug */,
+				098820941B77CFEACF567467 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		EC0DA2A424AB3245E7B59BE0 /* XCLocalSwiftPackageReference "Packages/VoiceMemoModules" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/VoiceMemoModules;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		32305DC3F184E22CC5D0EE18 /* AudioCapture */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AudioCapture;
+		};
+		47D8B45FCA67B71635425369 /* RecordingFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RecordingFeature;
+		};
+		4962860EE2B543BEAB482563 /* VoiceMemoDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VoiceMemoDomain;
+		};
+		4A7A48E0DD71E901DF17609A /* AudioPlayback */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AudioPlayback;
+		};
+		59784F8FA3AB7441B4685161 /* OutboxFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OutboxFeature;
+		};
+		632A62DB69F6A30F2AFF58AE /* Transcription */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Transcription;
+		};
+		660727A10AF9BAD41033E87A /* StatusFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StatusFeature;
+		};
+		6B90F6B68A497CDFAB6E28E2 /* MemoDetailFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MemoDetailFeature;
+		};
+		9FB843F044766C1FC88E96F2 /* MemoListFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MemoListFeature;
+		};
+		9FB9BBB552C0A55FEBE5A022 /* DeviceSync */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DeviceSync;
+		};
+		AB7E4D5520EA884C005F3234 /* DeviceSync */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DeviceSync;
+		};
+		ABEC2ACFC573CAEAD7A36C0D /* WatchPersistence */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WatchPersistence;
+		};
+		AF2CC19225C1A023841FAEE4 /* MemoPersistence */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MemoPersistence;
+		};
+		AFD95B5C8D5BDAC5702802FD /* RecordingReminders */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RecordingReminders;
+		};
+		B4B0341060AE5DCCCC33301D /* WatchWorkflow */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WatchWorkflow;
+		};
+		C8BDE93C2D8C4F3F17B0E799 /* VoiceMemoInterfaces */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VoiceMemoInterfaces;
+		};
+		D2EBAC8BCA5CB78E54E9DCD9 /* Summarization */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Summarization;
+		};
+		DE728E5D8989F0EB1EB5C7F7 /* MemoProcessing */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MemoProcessing;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8404DE3D62F85A5F63D34928 /* Project object */;
+}

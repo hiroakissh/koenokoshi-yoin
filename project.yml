@@ -1,0 +1,101 @@
+name: KoenokoshiYoin
+options:
+  deploymentTarget:
+    iOS: "26.0"
+    watchOS: "26.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+packages:
+  VoiceMemoModules:
+    path: Packages/VoiceMemoModules
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    DEVELOPMENT_TEAM: ""
+targets:
+  KoenokoshiYoinPhone:
+    type: application
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: Apps/PhoneApp
+    resources:
+      - path: Apps/PhoneApp/LaunchScreen.storyboard
+    info:
+      path: Apps/PhoneApp/Info.plist
+      properties:
+        UILaunchStoryboardName: LaunchScreen
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.hiroakissh.koenokoshiyoin
+        PRODUCT_NAME: "声のこし・余韻"
+        TARGETED_DEVICE_FAMILY: "1"
+    dependencies:
+      - package: VoiceMemoModules
+        product: MemoListFeature
+      - package: VoiceMemoModules
+        product: MemoDetailFeature
+      - package: VoiceMemoModules
+        product: StatusFeature
+      - package: VoiceMemoModules
+        product: MemoPersistence
+      - package: VoiceMemoModules
+        product: VoiceMemoInterfaces
+      - package: VoiceMemoModules
+        product: VoiceMemoDomain
+      - package: VoiceMemoModules
+        product: DeviceSync
+      - package: VoiceMemoModules
+        product: MemoProcessing
+      - package: VoiceMemoModules
+        product: Transcription
+      - package: VoiceMemoModules
+        product: Summarization
+      - package: VoiceMemoModules
+        product: AudioPlayback
+  KoenokoshiYoinWatch:
+    type: application
+    platform: watchOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: Apps/WatchApp
+    info:
+      path: Apps/WatchApp/Info.plist
+      properties:
+        WKApplication: true
+        WKCompanionAppBundleIdentifier: com.hiroakissh.koenokoshiyoin
+        NSMicrophoneUsageDescription: "音声メモを録音するためにマイクを使用します。"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.hiroakissh.koenokoshiyoin.watchapp
+        PRODUCT_NAME: "声のこし・余韻"
+        TARGETED_DEVICE_FAMILY: "4"
+    dependencies:
+      - package: VoiceMemoModules
+        product: RecordingFeature
+      - package: VoiceMemoModules
+        product: OutboxFeature
+      - package: VoiceMemoModules
+        product: AudioCapture
+      - package: VoiceMemoModules
+        product: WatchPersistence
+      - package: VoiceMemoModules
+        product: DeviceSync
+      - package: VoiceMemoModules
+        product: RecordingReminders
+      - package: VoiceMemoModules
+        product: WatchWorkflow
+schemes:
+  KoenokoshiYoinPhone:
+    build:
+      targets:
+        KoenokoshiYoinPhone: all
+    run:
+      config: Debug
+  KoenokoshiYoinWatch:
+    build:
+      targets:
+        KoenokoshiYoinWatch: all
+    run:
+      config: Debug
